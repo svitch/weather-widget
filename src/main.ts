@@ -1,11 +1,7 @@
 import Vue from 'vue';
+import VueCustomElement from 'vue-custom-element';
+import 'document-register-element/build/document-register-element';
 import App from './App.vue';
-import './registerServiceWorker';
-import store from './store';
 
-Vue.config.productionTip = false;
-
-new Vue({
-  store,
-  render: (h) => h(App),
-}).$mount('#app');
+Vue.use(VueCustomElement);
+Vue.customElement('weather-widget', (new App().$options));

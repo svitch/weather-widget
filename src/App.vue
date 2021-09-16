@@ -18,10 +18,12 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { mapGetters } from 'vuex';
+import store from './store/index';
 import Settings from './components/Settings.vue';
 import Forecast from './components/Forecast.vue';
 
 @Component({
+  store,
   components: {
     Settings,
     Forecast,
